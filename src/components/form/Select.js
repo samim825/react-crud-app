@@ -3,7 +3,9 @@ import React from "react";
 const Select = ({ fieldName, label, options, handleFilterChange }) => {
   const handleChange = (event) => {
     const { value } = event.target;
-    handleFilterChange(fieldName, value); // Call the parent's onChange function
+    if (handleFilterChange !== undefined) {
+      handleFilterChange(fieldName, value); // Call the parent's onChange function
+    }
   };
 
   return (

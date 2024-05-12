@@ -7,7 +7,7 @@ export const Modal = ({ isOpen, onClose }) => {
       <div className="modalCustom-content rounded">
         <div className="custom-modal-header">
           <div className="d-flex justify-content-between align-items-center">
-            <h2>Create Person</h2>
+            <h2>Create User</h2>
             <span className="close" onClick={onClose}>
               &times;
             </span>

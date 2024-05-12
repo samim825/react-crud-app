@@ -1,11 +1,11 @@
-import PersonTable from "./components/table/PersonTable";
-import { personData } from "./api/mockData";
+import { userData } from "./api/mockData";
 import TableContentHeader from "./components/TableContentHeader";
+import UserTable from "./components/table/UserTable";
 function App() {
   return (
     <div className="container mt-5">
-      <TableContentHeader headingTitle="Person List" btnLabel="Add Person" />
-      <PersonTable data={personData} />
+      <TableContentHeader headingTitle="User List" btnLabel="Add User" />
+      <UserTable data={userData} />
     </div>
   );
 }

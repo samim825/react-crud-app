@@ -13,8 +13,6 @@ const SearchFilters = ({ handleFilterSubmit }) => {
   });
 
   const handleFilterChange = (name, value) => {
-    // const { name, value } = event.target;
-    // console.log(event.target);
     setFormFilters({ ...formFilters, [name]: value });
   };
 
@@ -41,7 +39,7 @@ const SearchFilters = ({ handleFilterSubmit }) => {
           <div className="col-sm-3">
             <Input
               fieldName="email"
-              type="email"
+              type="text"
               placeholder="Search by Email"
               handleFilterChange={handleFilterChange}
             />
@@ -54,40 +52,24 @@ const SearchFilters = ({ handleFilterSubmit }) => {
               handleFilterChange={handleFilterChange}
             />
           </div>
-          {/* <div className="col-sm-3">
-            <Input
-              fieldName="age"
-              label="Age"
-              type="number"
-              placeholder="Enter age"
-              min="0"
-              max="100"
-            />
-          </div> */}
           <div className="col-sm-3">
             <Select
               fieldName="gender"
               options={[
+                { value: "", label: "---  Select Gender  ---" },
                 { label: "Male", value: "male" },
                 { label: "Female", value: "female" },
               ]}
               handleFilterChange={handleFilterChange}
             />
           </div>
-          {/* <div className="col-sm-3">
-            <Input
-              fieldName="dateOfBirth"
-              label="Date of Birth"
-              type="date"
-              placeholder="Enter date of birth"
-            />
-          </div> */}
         </div>
         <div className="row mt-3">
           <div className="col-sm-3">
             <Select
               fieldName="area"
               options={[
+                { value: "", label: "---  Select area  ---" },
                 { value: "Mirpur", label: "Mirpur" },
                 { value: "Savar", label: "Savar" },
                 { value: "Banani", label: "Banani" },
@@ -102,6 +84,7 @@ const SearchFilters = ({ handleFilterSubmit }) => {
             <Select
               fieldName="occupation"
               options={[
+                { value: "", label: "---  Select Occupation  ---" },
                 { value: "SoftwareEngineer", label: "Software Enginner" },
                 { value: "Banker", label: "Banker" },
                 { value: "Accountant", label: "Accountant" },

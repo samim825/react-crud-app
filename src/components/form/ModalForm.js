@@ -10,7 +10,7 @@ const ModalForm = () => {
         <div>
           <Input fieldName="name" label="Name" placeholder="Enter name" />
         </div>
-        <div>
+        {/* <div>
           <Input
             fieldName="age"
             label="Age"
@@ -19,7 +19,7 @@ const ModalForm = () => {
             min="0"
             max="100"
           />
-        </div>
+        </div> */}
         <div>
           <Radio
             fieldName="gender"
@@ -30,14 +30,14 @@ const ModalForm = () => {
             ]}
           />
         </div>
-        <div>
+        {/* <div>
           <Input
             fieldName="dateOfBirth"
             label="Date of Birth"
             type="date"
             placeholder="Enter date of birth"
           />
-        </div>
+        </div> */}
         <div>
           <Select
             fieldName="area"
