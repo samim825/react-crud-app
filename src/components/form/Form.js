@@ -3,13 +3,26 @@ import Input from "./Input";
 import Select from "./Select";
 import Radio from "./Radio";
 
-export const Form = () => {
+export const Form = ({ formData, setFormData, handleCreateUserSubmit }) => {
+  const handleChange = (event) => {
+    const { name, type, value, checked } = event.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
+
   return (
     <div className="">
-      <form className="">
+      <form className="" onSubmit={handleCreateUserSubmit}>
         <div className="row">
           <div className="col-sm-3">
-            <Input fieldName="name" label="Name" placeholder="Enter name" />
+            <Input
+              fieldName="name"
+              label="Name"
+              placeholder="Enter name"
+              handleChange={handleChange}
+            />
           </div>
           <div className="col-sm-3">
             <Input
@@ -19,12 +32,14 @@ export const Form = () => {
               placeholder="Enter age"
               min="0"
               max="100"
+              handleChange={handleChange}
             />
           </div>
           <div className="col-sm-3">
             <Radio
               fieldName="gender"
               label="Gender"
+              handleChange={handleChange}
               options={[
                 { label: "Male", value: "male" },
                 { label: "Female", value: "female" },
@@ -37,6 +52,7 @@ export const Form = () => {
               label="Date of Birth"
               type="date"
               placeholder="Enter date of birth"
+              handleChange={handleChange}
             />
           </div>
         </div>
@@ -45,6 +61,7 @@ export const Form = () => {
             <Select
               fieldName="area"
               label="Area"
+              handleChange={handleChange}
               options={[
                 { value: "Mirpur", label: "Mirpur" },
                 { value: "Savar", label: "Savar" },
@@ -61,6 +78,7 @@ export const Form = () => {
               label="E-mail address"
               type="email"
               placeholder="Enter email"
+              handleChange={handleChange}
             />
           </div>
           <div className="col-sm-3">
@@ -69,12 +87,14 @@ export const Form = () => {
               label="Phone Number"
               type="tel"
               placeholder="Enter Phone Number"
+              handleChange={handleChange}
             />
           </div>
           <div className="col-sm-3">
             <Select
               fieldName="occupation"
               label="Occupation"
+              handleChange={handleChange}
               options={[
                 { value: "SoftwareEngineer", label: "Software Enginner" },
                 { value: "Banker", label: "Banker" },

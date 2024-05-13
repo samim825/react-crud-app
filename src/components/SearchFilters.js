@@ -11,7 +11,6 @@ const SearchFilters = ({ handleFilterSubmit }) => {
     area: "",
     occupation: "",
   });
-
   const handleFilterChange = (name, value) => {
     setFormFilters({ ...formFilters, [name]: value });
   };
@@ -19,6 +18,10 @@ const SearchFilters = ({ handleFilterSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleFilterSubmit(formFilters);
+  };
+
+  const handleResetFilter = (event) => {
+    window.location.reload();
   };
 
   return (
@@ -94,7 +97,11 @@ const SearchFilters = ({ handleFilterSubmit }) => {
             />
           </div>
           <div className="col-sm-3 padding-left-12 mt-4">
-            <button type="reset" className="btn btn-block btn-warning w-100">
+            <button
+              type="button"
+              className="btn btn-block btn-warning w-100"
+              onClick={handleResetFilter}
+            >
               Cancel Filter
             </button>
           </div>
@@ -104,15 +111,6 @@ const SearchFilters = ({ handleFilterSubmit }) => {
             </button>
           </div>
         </div>
-        {/* <div className="row ">
-          <div className="d-flex justify-content-end">
-            <div className="col-sm-3 padding-left-12">
-              <button type="submit" className="btn btn-block btn-success w-100">
-                Apply Filter
-              </button>
-            </div>
-          </div>
-        </div> */}
       </form>
     </div>
   );

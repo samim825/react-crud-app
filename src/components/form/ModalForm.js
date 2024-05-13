@@ -3,45 +3,37 @@ import Input from "./Input";
 import Radio from "./Radio";
 import Select from "./Select";
 
-const ModalForm = () => {
+const ModalForm = ({ formData, onChange, onSubmit }) => {
   return (
     <div className="">
-      <form className="">
+      <form onSubmit={onSubmit}>
         <div>
-          <Input fieldName="name" label="Name" placeholder="Enter name" />
-        </div>
-        {/* <div>
           <Input
-            fieldName="age"
-            label="Age"
-            type="number"
-            placeholder="Enter age"
-            min="0"
-            max="100"
+            fieldName="name"
+            label="Name"
+            placeholder="Enter name"
+            value={formData.name}
+            handleChange={onChange}
           />
-        </div> */}
+        </div>
         <div>
           <Radio
             fieldName="gender"
             label="Gender"
+            value={formData.gender}
+            handleChange={onChange}
             options={[
               { label: "Male", value: "male" },
               { label: "Female", value: "female" },
             ]}
           />
         </div>
-        {/* <div>
-          <Input
-            fieldName="dateOfBirth"
-            label="Date of Birth"
-            type="date"
-            placeholder="Enter date of birth"
-          />
-        </div> */}
         <div>
           <Select
             fieldName="area"
             label="Area"
+            value={formData.area}
+            handleChange={onChange}
             options={[
               { value: "Mirpur", label: "Mirpur" },
               { value: "Savar", label: "Savar" },
@@ -58,6 +50,8 @@ const ModalForm = () => {
             label="E-mail address"
             type="email"
             placeholder="Enter email"
+            value={formData.email}
+            handleChange={onChange}
           />
         </div>
         <div>
@@ -66,6 +60,8 @@ const ModalForm = () => {
             label="Phone Number"
             type="tel"
             placeholder="Enter Phone Number"
+            value={formData.phonenumber}
+            handleChange={onChange}
           />
         </div>
 
